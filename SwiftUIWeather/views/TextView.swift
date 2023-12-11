@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct TextView: View {
-    let text: String = "Text"
-    let fontSize: CGFloat = 16
-    let fontWeight: Font.Weight = .regular
-    let foreground: Color = .white
-    let width: CGFloat? = nil
-    let height: CGFloat? = nil
+    var text: String = "Text"
+    var fontSize: CGFloat = 16
+    var fontWeight: Font.Weight = .regular
+    var foreground: Color = .white
+    var width: CGFloat? = nil
+    var height: CGFloat? = nil
     
     var body: some View {
         Text(text)

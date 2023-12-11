@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct BackgroundView: View {
-    let topColor: Color
-    let bottomColor: Color
+    var topColor: Color
+    var bottomColor: Color
     var body: some View {
         LinearGradient(gradient: Gradient(colors: [topColor, bottomColor]),
                        startPoint: .top,
