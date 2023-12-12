@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    let WeatherHourList: [(id: Int, hour: String, icon: String, temperature: String)] = [
+    @State private var isNight = false
+    
+    private let WeatherHourList: [(id: Int, hour: String, icon: String, temperature: String)] = [
         (1,"Now", "cloud.fog.fill", "-7°"),
         (2, "2am", "snowflake", "-8°"),
         (3, "3am", "snowflake", "-8°"),
@@ -37,10 +39,10 @@ struct ContentView: View {
         (26, "11pm", "cloud.moon.fill", "-18°"),
         (27, "12am", "cloud.moon.fill", "-19°"),
         (28, "1am", "cloud.moon.fill", "-20°"),
-        (29, "2am", "moon.stars", "-21°"),
+        (29, "2am", "moon.stars.fill", "-21°"),
     ]
     
-    let WeatherDayList: [(id: Int, day: String, icon: String, nightTemperature: String, dayTemperature: String)] = [
+    private let WeatherDayList: [(id: Int, day: String, icon: String, nightTemperature: String, dayTemperature: String)] = [
         (1,"Today", "snowflake", "-19°", "-7°"),
         (2, "Wed", "sun.haze.fill", "-22°", "-13°"),
         (3, "Thu", "sun.haze.fill", "-17°", "-6°"),
@@ -52,12 +54,22 @@ struct ContentView: View {
         (9, "Wen", "cloud.fill", "-2°", "-8°"),
         (10, "Thu", "snowflake", "-2°", "-6°"),
     ]
+    
     var body: some View {
         ZStack {
-            BackgroundView(topColor: .dark1, bottomColor: .dark2)
+            BackgroundView(topColor: isNight ? .dark1 : .blue, bottomColor: isNight ? .dark2 : .white)
             VStack {
-                TextView(text: "My location", fontSize: 38, fontWeight: .regular)
-                TextView(text: "Almaty", fontSize: 18, fontWeight: .medium)
+                HStack {
+                    Image(systemName: "").frame(width: 50, height: 50)
+                    Spacer()
+                    VStack {
+                        TextView(text: "My location", fontSize: 38, fontWeight: .regular)
+                        TextView(text: "Almaty", fontSize: 18, fontWeight: .medium)
+                    }
+                    Spacer()
+                    NightToggleButton(isNight: $isNight)
+                }
+                
                 ScrollView {
                     TextView(text: "-7°", fontSize: 92, fontWeight: .thin)
                     TextView(text: "Fog", fontSize: 20)
@@ -76,7 +88,7 @@ struct ContentView: View {
                     }
                     .frame(width: WIDTH - 32)
                     .padding(.vertical, 13)
-                    .background(.dark2)
+                    .background(isNight ? .black.opacity(0.2) : .black.opacity(0.4))
                     .cornerRadius(10)
                     
                     VStack(alignment: .leading) {
@@ -84,9 +96,9 @@ struct ContentView: View {
                             Image(systemName: "calendar")
                                 .renderingMode(.template)
                                 .resizable()
-                                .foregroundColor(.gray)
+                                .foregroundColor(isNight ? .gray : .white.opacity(0.8))
                                 .frame(width: 24, height: 24)
-                            TextView(text: "10-DAY FORECAST", fontWeight: .medium, foreground: .gray)
+                            TextView(text: "10-DAY FORECAST", fontWeight: .medium, foreground: isNight ? .gray : .white.opacity(0.8))
                         }
                         .padding(.bottom, 10)
                         
@@ -97,7 +109,7 @@ struct ContentView: View {
                     }
                     .frame(width: WIDTH - 32)
                     .padding(.vertical, 13)
-                    .background(.dark2)
+                    .background(isNight ? .black.opacity(0.2) : .black.opacity(0.4))
                     .cornerRadius(10)
                 }
                 

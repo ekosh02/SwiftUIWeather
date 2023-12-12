@@ -14,6 +14,7 @@
 		A11D749F2B2792380004446E /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D749E2B2792380004446E /* TextView.swift */; };
 		A11D74A12B2793DC0004446E /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D74A02B2793DC0004446E /* BackgroundView.swift */; };
 		A11D74A32B279A300004446E /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D74A22B279A300004446E /* Dimensions.swift */; };
+		A11D74A62B2867A50004446E /* NightToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D74A52B2867A50004446E /* NightToggleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		A11D749E2B2792380004446E /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		A11D74A02B2793DC0004446E /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		A11D74A22B279A300004446E /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
+		A11D74A52B2867A50004446E /* NightToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightToggleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				A11D749E2B2792380004446E /* TextView.swift */,
 				A11D74A02B2793DC0004446E /* BackgroundView.swift */,
+				A11D74A52B2867A50004446E /* NightToggleButton.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			files = (
 				A11D749F2B2792380004446E /* TextView.swift in Sources */,
 				A11D74A32B279A300004446E /* Dimensions.swift in Sources */,
+				A11D74A62B2867A50004446E /* NightToggleButton.swift in Sources */,
 				A11D74922B2790F90004446E /* ContentView.swift in Sources */,
 				A11D74A12B2793DC0004446E /* BackgroundView.swift in Sources */,
 				A11D74902B2790F90004446E /* SwiftUIWeatherApp.swift in Sources */,
